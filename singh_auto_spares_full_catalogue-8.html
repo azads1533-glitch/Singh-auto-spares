@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SINGH AUTO SPARES AND ACCESSORIES</title>
+<style>
+:root{--o:#ff9f00;--o2:#ffc247;--bg:#080808;--card:#151515;--line:#2c2c2c;--muted:#aaa}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#fff}
+a{text-decoration:none;color:inherit}.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(8,8,8,.97);border-bottom:1px solid #292929}
+.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:20px;font-weight:900;letter-spacing:.5px}.logo small{display:block;color:var(--o);font-size:10px;letter-spacing:2px;margin-top:2px}
+nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}nav button,.call{background:none;border:0;color:#eee;padding:10px 12px;border-radius:8px;font-weight:800;cursor:pointer}nav button:hover{color:var(--o);background:#211807}.call{background:var(--o);color:#111!important}
+.page{display:none;min-height:calc(100vh - 74px);padding:65px 0}.page.active{display:block}
+.hero{min-height:600px;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.badge{display:inline-block;border:1px solid #6d490c;color:var(--o2);padding:7px 12px;border-radius:20px;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:17px}
+h1{font-size:clamp(42px,6vw,75px);line-height:.98;text-transform:uppercase}h1 span{color:var(--o)}
+.hero p{color:#bbb;font-size:18px;margin:20px 0 28px;max-width:620px}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{padding:14px 19px;border-radius:9px;font-weight:900;display:inline-block}.primary{background:var(--o);color:#111}.secondary{border:1px solid #444}
+.visual{height:380px;border-radius:26px;border:1px solid #333;background:radial-gradient(circle,#38270b,#111 55%,#090909);display:grid;place-items:center;font-size:145px;box-shadow:0 25px 80px #000}
+.heroPanel{height:445px;border:1px solid #3a3a3a;border-radius:25px;background:
+linear-gradient(145deg,#1a1a1a 0%,#0c0c0c 65%,#171108 100%);
+padding:25px;box-shadow:0 25px 80px #000;position:relative;overflow:hidden}
+.heroPanel:before{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,159,0,.12);border-radius:50%;right:-120px;top:-100px}
+.panelTop{display:flex;align-items:flex-start;justify-content:space-between;position:relative;z-index:1}
+.panelKicker{font-size:10px;letter-spacing:2px;color:#888;font-weight:900}
+.panelTop h3{font-size:32px;line-height:.9;margin-top:5px;letter-spacing:1px}
+.panelTop h3 strong{color:var(--o)}
+.gear{font-size:46px;color:var(--o);opacity:.9}
+.finderLine{height:1px;background:#333;margin:18px 0;position:relative}
+.finderLine span{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--o);position:absolute;top:-4px}
+.finderLine span:nth-child(1){left:0}.finderLine span:nth-child(2){left:33%}.finderLine span:nth-child(3){left:66%}.finderLine span:nth-child(4){right:0}
+.finderCard{width:100%;display:flex;align-items:center;gap:14px;text-align:left;background:#141414;border:1px solid #303030;color:#fff;border-radius:13px;padding:13px;margin-bottom:10px;cursor:pointer;transition:.2s}
+.finderCard:hover{border-color:var(--o);background:#1b160d;transform:translateX(3px)}
+.finderIcon{width:40px;height:40px;border-radius:10px;background:#211807;color:var(--o);display:grid;place-items:center;font-size:20px;flex:none}
+.finderCard div:nth-child(2){flex:1}.finderCard b{display:block;font-size:13px;letter-spacing:.5px}.finderCard small{display:block;color:#888;margin-top:2px;font-size:10px}
+.finderCard em{font-style:normal;color:var(--o);font-size:22px}
+.callCard{color:#fff}.callCard .finderIcon{background:var(--o);color:#111}
+.panelBottom{position:absolute;bottom:17px;left:25px;right:25px;display:flex;justify-content:space-between;color:#666;font-size:9px;font-weight:900;letter-spacing:1px}
+
+.qualityTitle{display:flex;align-items:center;justify-content:space-between;color:#ddd;font-size:10px;font-weight:900;letter-spacing:1.5px;margin:14px 0 9px}.qualityTitle span{color:#777;font-size:9px;letter-spacing:.3px;text-transform:none;font-weight:600}.qualityGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.qualityCard{min-height:86px;text-align:left;background:#111;border:1px solid #343434;border-radius:12px;padding:10px;color:#fff;cursor:pointer;transition:.2s;position:relative;overflow:hidden}.qualityCard:hover{transform:translateY(-2px);border-color:var(--o);background:#17130d}.qualityCard:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--o);opacity:.8}.qualityCard.genuine:after{background:#8fcf5b}.qualityCard.oem:after{background:#6fa8ff}.qualityCard.after:after{background:var(--o)}.qIcon{height:28px;width:28px;border-radius:8px;background:#211807;color:var(--o);display:grid;place-items:center;font-size:12px;font-weight:900;margin-bottom:7px}.qualityCard.genuine .qIcon{color:#9bd76a;background:#16200f}.qualityCard.oem .qIcon{color:#82b4ff;background:#101b2b;font-size:9px}.qualityCard b{display:block;font-size:10px;letter-spacing:.5px}.qualityCard small{display:block;color:#777;font-size:8px;line-height:1.25;margin-top:3px}.qualityCard em{position:absolute;right:8px;top:10px;color:#666;font-style:normal}.finderActions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.miniCard{display:block;text-align:left;background:#141414;border:1px solid #303030;border-radius:10px;padding:9px;color:#fff;cursor:pointer;transition:.2s}.miniCard:hover{border-color:var(--o);background:#1b160d}.miniCard span{color:var(--o);font-size:15px}.miniCard b{display:block;font-size:9px;margin-top:3px}.miniCard small{display:block;color:#777;font-size:7px;margin-top:2px}.callMini{text-decoration:none}.panelBottom{display:none}
+
+.head{text-align:center;margin-bottom:32px}.head small{color:var(--o);font-weight:900;letter-spacing:2px}.head h2{font-size:40px;margin:7px 0}.head p{color:var(--muted)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}.filters button{border:1px solid #3a3a3a;background:#151515;color:#ddd;padding:10px 15px;border-radius:20px;cursor:pointer;font-weight:800}.filters button.active,.filters button:hover{background:var(--o);color:#111;border-color:var(--o)}
+.select{width:100%;max-width:360px;background:#151515;color:#fff;border:1px solid #3b3b3b;border-radius:10px;padding:13px;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:20px;transition:.2s}.product:hover{transform:translateY(-4px);border-color:#79520d}
+.picon{height:120px;border-radius:12px;background:linear-gradient(145deg,#211a0d,#0d0d0d);display:grid;place-items:center;font-size:58px;margin-bottom:16px}
+.tag{display:inline-block;color:var(--o);font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:7px}.product h3{font-size:19px;margin-bottom:6px}.model{color:#bbb;font-size:13px;margin-bottom:12px}.price{font-size:24px;font-weight:900;color:var(--o2)}.price small{font-size:11px;color:#888;font-weight:600}.actions{display:flex;gap:8px;margin-top:14px}.actions button,.actions a{flex:1;text-align:center;border:1px solid #444;background:#101010;color:#fff;padding:10px;border-radius:8px;font-weight:800;cursor:pointer}.actions .buy{background:var(--o);border-color:var(--o);color:#111}
+.note{margin:28px 0;padding:14px 16px;border-left:3px solid var(--o);background:#121212;color:#aaa;font-size:13px}
+.brandgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.brand{background:#151515;border:1px solid #333;border-radius:13px;padding:25px;text-align:center;font-weight:900}
+.contact{max-width:700px;margin:auto;background:#151515;border:1px solid #333;border-radius:20px;padding:30px}.line{padding:16px 0;border-bottom:1px solid #292929}.line:last-child{border:0}.line small{display:block;color:#888;text-transform:uppercase;letter-spacing:1px}.line a{font-size:20px;font-weight:900}.line a:hover{color:var(--o)}
+.back{text-align:center;margin-top:35px}.back button{background:none;color:#aaa;border:1px solid #444;padding:10px 18px;border-radius:8px;cursor:pointer}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:100;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{width:min(500px,100%);background:#171717;border:1px solid #444;border-radius:18px;padding:25px;position:relative}.close{position:absolute;right:14px;top:10px;background:none;border:0;color:#aaa;font-size:25px;cursor:pointer}.modalbox h3{font-size:25px;margin:20px 0 8px}.modalbox p{color:#aaa;margin-bottom:15px}.modalprice{font-size:30px;color:var(--o2);font-weight:900;margin-bottom:20px}
+footer{text-align:center;padding:25px;color:#777;border-top:1px solid #222;font-size:13px}
+@media(max-width:800px){.nav{align-items:flex-start;padding:10px 0}.logo{font-size:16px}nav button{font-size:11px;padding:8px}.hero{grid-template-columns:1fr;min-height:auto}.heroPanel{height:430px}.grid{grid-template-columns:1fr}.brandgrid{grid-template-columns:repeat(2,1fr)}.page{padding:50px 0}.head h2{font-size:33px}}
+</style>
+
+<style id="whatsapp-cart-style">
+.cart-fab{position:fixed;right:18px;bottom:18px;z-index:9999;background:#ff7a00;color:#111;border:0;border-radius:999px;padding:13px 18px;font-weight:800;box-shadow:0 8px 30px #0008;cursor:pointer}
+.cart-count{background:#111;color:#fff;border-radius:999px;padding:2px 7px;margin-left:5px}
+.cart-panel{position:fixed;right:18px;bottom:78px;width:min(390px,calc(100vw - 36px));max-height:70vh;overflow:auto;z-index:9998;background:#111;color:#fff;border:1px solid #ff7a00;border-radius:16px;padding:18px;box-shadow:0 18px 50px #000b;display:none}
+.cart-panel.show{display:block}
+.cart-item{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #333}
+.cart-actions{display:flex;gap:8px;margin-top:14px}
+.cart-actions button{flex:1;padding:11px;border-radius:10px;border:0;font-weight:800;cursor:pointer}
+.wa-order{background:#25D366;color:#071b0e}
+.clear-cart{background:#333;color:#fff}
+.add-cart{background:#ff7a00!important;color:#111!important;border:0!important}
+</style>
+
+
+<style id="whatsapp-contact-style">
+.whatsapp-contact-icon{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff!important;
+  text-decoration:none!important;
+  font-size:25px;
+  font-weight:900;
+  box-shadow:0 5px 18px #0005;
+  transition:transform .2s, box-shadow .2s;
+}
+.whatsapp-contact-icon:hover{
+  transform:scale(1.08);
+  box-shadow:0 8px 24px #0007;
+}
+.whatsapp-contact-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.whatsapp-contact-label{
+  font-size:13px;
+  opacity:.85;
+}
+</style>
+
+</head>
+<body>
+<header><div class="wrap nav">
+<div class="logo">SINGH AUTO SPARES<small>AND ACCESSORIES</small></div>
+<nav>
+<button onclick="page('home')">Home</button>
+<button onclick="page('parts')">Spare Parts</button>
+<button onclick="page('accessories')">Car Accessories</button>
+<button onclick="page('brands')">Supported Brands</button>
+<button class="call" onclick="location.href='tel:+917629817829'">📞 Direct Call</button>
+<button onclick="location.href='mailto:azads1533@gmail.com'">✉ Email</button>
+</nav></div></header>
+
+<main>
+<section id="home" class="page active"><div class="wrap hero">
+<div><div class="badge">AUTOMOTIVE SPARE PARTS SPECIALIST</div><h1>RIGHT PARTS.<br><span>RIGHT DRIVE.</span></h1>
+<p>Spare parts and car accessories with vehicle-wise options, indicative market pricing and direct enquiry.</p>
+<div class="buttons"><a class="btn primary" href="tel:+917629817829">📞 7629817829</a><a class="btn secondary" href="mailto:azads1533@gmail.com">✉ azads1533@gmail.com</a></div></div>
+<div class="heroPanel">
+  <div class="panelTop">
+    <div>
+      <span class="panelKicker">SINGH AUTO SPARES</span>
+      <h3>PART<br><strong>FINDER</strong></h3>
+    </div>
+    <div class="gear">⚙</div>
+  </div>
+  <div class="finderLine"><span></span><span></span><span></span><span></span></div>
+  <div class="qualityTitle">PART QUALITY OPTIONS <span>Choose what you need</span></div>
+  <div class="qualityGrid">
+    <button class="qualityCard genuine" onclick="page('parts')"><div class="qIcon">✓</div><div><b>GENUINE PARTS</b><small>Original brand-supplied parts</small></div><em>→</em></button>
+    <button class="qualityCard oem" onclick="page('parts')"><div class="qIcon">OEM</div><div><b>OEM PARTS</b><small>Original-equipment specification</small></div><em>→</em></button>
+    <button class="qualityCard after" onclick="page('parts')"><div class="qIcon">A</div><div><b>AFTERMARKET</b><small>Compatible alternatives &amp; options</small></div><em>→</em></button>
+  </div>
+  <div class="finderActions">
+    <button class="miniCard" onclick="page('parts')"><span>⚙️</span><b>SPARE PARTS</b><small>Brake • Clutch • Lighting</small></button>
+    <button class="miniCard" onclick="page('accessories')"><span>✨</span><b>ACCESSORIES</b><small>Visor • Mats • Covers • LED</small></button>
+    <a class="miniCard callMini" href="tel:+917629817829"><span>☎</span><b>CALL SPECIALIST</b><small>7629817829</small></a>
+  </div>
+</div></div></section>
+
+<section id="parts" class="page"><div class="wrap">
+<div class="head"><small>SPARE PARTS CATALOGUE</small><h2>Find Your Spare Part</h2><p>Choose a category or vehicle model. Click any product for details and WhatsApp enquiry.</p></div>
+<select class="select" id="partModel" onchange="filterProducts()">
+<option value="all">All Vehicles</option><option value="santro">Hyundai Santro</option><option value="swift">Maruti Swift</option><option value="creta">Hyundai Creta</option><option value="fortuner">Toyota Fortuner</option><option value="innova">Toyota Innova</option><option value="i20">Hyundai i20</option>
+</select>
+<div class="filters"><button class="active" onclick="catFilter(this,'all')">All Parts</button><button onclick="catFilter(this,'brakes')">Brake Parts</button><button onclick="catFilter(this,'clutch')">Clutch</button><button onclick="catFilter(this,'lighting')">Headlight / Lighting</button><button onclick="catFilter(this,'body')">Body Parts</button><button onclick="catFilter(this,'service')">Service Parts</button></div>
+<div id="productGrid" class="grid"></div>
+<div class="note">⚠️ Prices shown are indicative market/reference prices and can change by model year, variant, brand, genuine/OEM/aftermarket quality, GST and supplier. Confirm the exact part number before ordering.</div>
+<div class="back"><button onclick="page('home')">← Back to Home</button></div>
+</div></section>
+
+<section id="accessories" class="page"><div class="wrap">
+<div class="head"><small>VEHICLE-WISE ACCESSORIES</small><h2>Car Accessories</h2><p>Rain visors and other accessories listed model-wise.</p></div>
+<select class="select" id="accModel" onchange="renderAccessories()">
+<option value="all">All Vehicles</option><option value="santro">Hyundai Santro</option><option value="grand-i10">Hyundai Grand i10</option><option value="i20">Hyundai i20</option><option value="swift">Maruti Swift</option><option value="brezza">Maruti Brezza</option><option value="fortuner">Toyota Fortuner</option>
+</select>
+<div id="accessoryGrid" class="grid"></div>
+<div class="note">💡 Accessory prices are indicative online/market references. Availability, design, finish and fitment can vary by model year and supplier.</div>
+<div class="back"><button onclick="page('home')">← Back to Home</button></div>
+</div></section>
+
+<section id="brands" class="page"><div class="wrap">
+<div class="head"><small>VEHICLE COVERAGE</small><h2>Supported Brands</h2><p>Clicking this section shows the vehicle brands covered by the business.</p></div>
+<div class="brandgrid"><div class="brand">HYUNDAI</div><div class="brand">MARUTI SUZUKI</div><div class="brand">TOYOTA</div><div class="brand">MAHINDRA</div><div class="brand">FORD</div><div class="brand">RENAULT</div><div class="brand">HONDA</div><div class="brand">VOLKSWAGEN</div><div class="brand">TATA</div><div class="brand">CHEVROLET</div><div class="brand">SKODA</div><div class="brand">JEEP</div></div>
+<div class="back"><button onclick="page('home')">← Back to Home</button></div></div></section>
+
+<section id="contact" class="page"><div class="wrap"><div class="head"><small>CONTACT</small><h2>Contact Singh Auto Spares</h2><p>Tap any detail to contact directly.</p></div>
+<div class="contact"><div class="line"><small>Direct Call</small><a href="tel:+917629817829">7629817829</a></div><div class="line"><small>WhatsApp</small><a href="https://wa.me/916009478898" target="_blank">6009478898</a></div><div class="line"><small>Email</small><a href="mailto:azads1533@gmail.com">azads1533@gmail.com</a></div></div></div></section>
+</main>
+<footer>© 2026 SINGH AUTO SPARES AND ACCESSORIES · Genuine Parts • Better Performance • Longer Journey</footer>
+
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalIcon" style="font-size:55px">⚙️</div><h3 id="modalTitle"></h3><p id="modalDesc"></p><div class="modalprice" id="modalPrice"></div><a id="modalWA" class="btn primary" target="_blank">💬 Enquire on WhatsApp</a></div></div>
+
+<script>
+const products=[
+{name:"Front Brake Pad Set",model:"Hyundai Santro",m:"santro",cat:"brakes",price:"₹650–₹1,050",icon:"🛑",desc:"Front disc brake pad set; price varies by Santro generation and brand."},
+{name:"Clutch Plate / Pressure Plate",model:"Hyundai Santro",m:"santro",cat:"clutch",price:"₹1,259–₹1,483",icon:"⚙️",desc:"Santro clutch components; exact price depends on generation and brand."},
+{name:"Clutch Kit",model:"Hyundai Santro / Santro Xing",m:"santro",cat:"clutch",price:"₹2,675–₹2,882",icon:"🔧",desc:"Clutch + pressure plate kit reference range."},
+{name:"Front Brake Pad Set",model:"Maruti Swift 2021–2024",m:"swift",cat:"brakes",price:"₹1,580",icon:"🛑",desc:"Reference price for genuine front brake pads."},
+{name:"Brake Pad Set",model:"Maruti Swift",m:"swift",cat:"brakes",price:"₹1,730–₹2,199",icon:"🛑",desc:"Genuine brake-pad references; variant/part number matters."},
+{name:"Headlight — Left/Right",model:"Maruti Swift 2021–2024",m:"swift",cat:"lighting",price:"₹3,393",icon:"💡",desc:"Reference price for one side; confirm exact variant."},
+{name:"Clutch Plate",model:"Maruti Swift 2021–2024",m:"swift",cat:"clutch",price:"₹1,819",icon:"⚙️",desc:"Reference price; exact engine/variant required."},
+{name:"Front Brake Pads",model:"Hyundai Creta 2020–2024",m:"creta",cat:"brakes",price:"₹3,770",icon:"🛑",desc:"Genuine reference price for front brake pads."},
+{name:"Rear Brake Pads",model:"Hyundai Creta 2020–2024",m:"creta",cat:"brakes",price:"₹3,770",icon:"🛑",desc:"Genuine reference price for rear brake pads."},
+{name:"Clutch Plate",model:"Hyundai Creta 2020–2024",m:"creta",cat:"clutch",price:"₹5,245",icon:"⚙️",desc:"Reference genuine price; engine/variant must be confirmed."},
+{name:"Oil Filter",model:"Hyundai Creta",m:"creta",cat:"service",price:"₹220+",icon:"🛢️",desc:"Reference service-part price; brand and variant affect price."},
+{name:"Headlight — Left/Right",model:"Toyota Fortuner",m:"fortuner",cat:"lighting",price:"₹8,438+",icon:"💡",desc:"Reference genuine headlight price; year/type affects price."},
+{name:"Headlight Assembly — Right",model:"Toyota Fortuner 2016+",m:"fortuner",cat:"lighting",price:"₹8,179–₹26,780",icon:"💡",desc:"Aftermarket and original assembly references vary substantially."},
+{name:"Tail Light — Left/Right",model:"Toyota Fortuner",m:"fortuner",cat:"lighting",price:"₹16,500",icon:"🔴",desc:"Reference genuine tail-lamp price."},
+{name:"Clutch Plate",model:"Toyota Fortuner",m:"fortuner",cat:"clutch",price:"₹4,001",icon:"⚙️",desc:"Reference price from current spare-parts listings."},
+{name:"Front Bumper",model:"Toyota Fortuner",m:"fortuner",cat:"body",price:"₹14,857",icon:"🚘",desc:"Reference genuine front bumper price."},
+{name:"Rear View Mirror",model:"Toyota Fortuner",m:"fortuner",cat:"body",price:"₹2,637",icon:"🪞",desc:"Reference genuine mirror price."},
+{name:"Front Brake Pad",model:"Toyota Innova",m:"innova",cat:"brakes",price:"₹770–₹1,465",icon:"🛑",desc:"Reference aftermarket/genuine-range examples."},
+{name:"Front Brake Pad Set",model:"Toyota Innova Crysta",m:"innova",cat:"brakes",price:"₹3,089",icon:"🛑",desc:"Reference genuine brake pad set."},
+{name:"Brake Pad Set",model:"Hyundai i20",m:"i20",cat:"brakes",price:"₹853–₹1,539",icon:"🛑",desc:"Reference aftermarket/OEM listings; variant matters."}
+];
+
+const accessories=[
+{name:"Rain Visor / Door Visor",model:"Hyundai Santro",m:"santro",price:"₹800–₹1,400",icon:"🌧️",desc:"Smoke/chrome-lined door visor; design varies by generation."},
+{name:"Rain Guard Door Visor",model:"Hyundai Grand i10 2013–2017",m:"grand-i10",price:"₹1,379",icon:"🌧️",desc:"4-piece rain guard reference price."},
+{name:"Rain Guard Door Visor",model:"Hyundai i20 2014–2017",m:"i20",price:"₹1,379",icon:"🌧️",desc:"4-piece rain guard reference price."},
+{name:"Door Visor",model:"Maruti Swift",m:"swift",price:"₹1,000–₹1,600",icon:"🌧️",desc:"Vehicle-specific visor; finish and generation affect price."},
+{name:"Door Visor",model:"Maruti Brezza",m:"brezza",price:"₹1,318–₹2,211",icon:"🌧️",desc:"Reference market range for different generations/brands."},
+{name:"Rain Guard Door Visor",model:"Toyota Fortuner 2008–2017",m:"fortuner",price:"₹1,699",icon:"🌧️",desc:"4-piece rain guard reference price."},
+{name:"Chrome-Line Door Rain Visor",model:"Toyota Fortuner",m:"fortuner",price:"₹1,400",icon:"✨",desc:"Chrome-line visor reference price."},
+{name:"Seat Covers",model:"Vehicle-wise",m:"all",price:"₹1,500+",icon:"💺",desc:"Price depends on model, material and stitching."},
+{name:"Floor Mats",model:"Vehicle-wise",m:"all",price:"₹800+",icon:"◼️",desc:"Vehicle-specific and universal options available."},
+{name:"Steering Cover",model:"Vehicle-wise",m:"all",price:"₹300+",icon:"⭕",desc:"Material and design affect price."},
+{name:"LED Headlight / Bulbs",model:"Vehicle-wise",m:"all",price:"₹1,000+",icon:"💡",desc:"Price varies by bulb type and brand."},
+{name:"Car Audio System",model:"Vehicle-wise",m:"all",price:"₹2,500+",icon:"🔊",desc:"Single/double-DIN and touchscreen options available."}
+];
+
+let currentCat="all";
+function page(id){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});if(id==="parts")renderProducts();if(id==="accessories")renderAccessories()}
+function catFilter(btn,cat){currentCat=cat;document.querySelectorAll(".filters button").forEach(x=>x.classList.remove("active"));btn.classList.add("active");renderProducts()}
+function renderProducts(){
+ const model=document.getElementById("partModel").value;
+ const list=products.filter(p=>(model==="all"||p.m===model)&&(currentCat==="all"||p.cat===currentCat));
+ document.getElementById("productGrid").innerHTML=list.map((p,i)=>`<div class="product"><div class="picon">${p.icon}</div><span class="tag">${p.cat.toUpperCase()}</span><h3>${p.name}</h3><div class="model">${p.model}</div><div class="price">${p.price} <small>indicative</small></div><div class="actions"><button onclick='details(${JSON.stringify(p)})'>View Details</button><a class="buy" target="_blank" href="https://wa.me/916009478898?text=${encodeURIComponent("Hello Singh Auto Spares, I need "+p.name+" for "+p.model+". Please confirm availability and exact price.")}">Enquire</a></div></div>`).join("")||"<p style='color:#aaa'>No products in this filter yet. Please choose another model/category or WhatsApp us for availability.</p>";
+}
+function renderAccessories(){
+ const model=document.getElementById("accModel").value;
+ const list=accessories.filter(p=>model==="all"||p.m===model||p.m==="all");
+ document.getElementById("accessoryGrid").innerHTML=list.map(p=>`<div class="product"><div class="picon">${p.icon}</div><span class="tag">ACCESSORY</span><h3>${p.name}</h3><div class="model">${p.model}</div><div class="price">${p.price} <small>indicative</small></div><div class="actions"><button onclick='details(${JSON.stringify(p)})'>View Details</button><a class="buy" target="_blank" href="https://wa.me/916009478898?text=${encodeURIComponent("Hello Singh Auto Spares, I need "+p.name+" for "+p.model+". Please confirm availability and exact price.")}">Enquire</a></div></div>`).join("");
+}
+function filterProducts(){renderProducts()}
+function details(p){document.getElementById("modalIcon").textContent=p.icon;document.getElementById("modalTitle").textContent=p.name+" — "+p.model;document.getElementById("modalDesc").textContent=p.desc;document.getElementById("modalPrice").textContent=p.price;document.getElementById("modalWA").href="https://wa.me/916009478898?text="+encodeURIComponent("Hello Singh Auto Spares, I want to enquire about "+p.name+" for "+p.model+". Price shown: "+p.price+". Please confirm exact part/variant, availability and final price.");document.getElementById("modal").classList.add("show")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+renderProducts();renderAccessories();
+</script>
+
+<div id="cartPanel" class="cart-panel">
+  <h3 style="margin:0 0 8px">🛒 Your Cart</h3>
+  <div id="cartItems">Your cart is empty.</div>
+  <div class="cart-actions">
+    <button class="clear-cart" onclick="clearCart()">Clear</button>
+    <button class="wa-order" onclick="orderOnWhatsApp()">Order on WhatsApp</button>
+  </div>
+</div>
+<button class="cart-fab" onclick="toggleCart()">🛒 Cart <span id="cartCount" class="cart-count">0</span></button>
+<script id="whatsapp-cart-script">
+let cart = JSON.parse(localStorage.getItem('singhAutoCart') || '[]');
+
+function addToCart(name, price){
+  const found = cart.find(x => x.name === name && x.price === price);
+  if(found) found.qty += 1;
+  else cart.push({name, price, qty:1});
+  saveCart();
+  renderCart();
+  document.getElementById('cartPanel').classList.add('show');
+}
+
+function saveCart(){ localStorage.setItem('singhAutoCart', JSON.stringify(cart)); }
+
+function renderCart(){
+  const box=document.getElementById('cartItems');
+  const count=document.getElementById('cartCount');
+  const totalQty=cart.reduce((s,x)=>s+x.qty,0);
+  count.textContent=totalQty;
+  if(!cart.length){ box.innerHTML='Your cart is empty.'; return; }
+  box.innerHTML=cart.map((x,i)=>`
+    <div class="cart-item">
+      <div><b>${escapeHtml(x.name)}</b><br><small>${escapeHtml(x.price)} × ${x.qty}</small></div>
+      <div>
+        <button onclick="changeQty(${i},-1)">−</button>
+        <button onclick="changeQty(${i},1)">+</button>
+      </div>
+    </div>`).join('');
+}
+
+function changeQty(i,d){
+  cart[i].qty += d;
+  if(cart[i].qty <= 0) cart.splice(i,1);
+  saveCart(); renderCart();
+}
+function clearCart(){ cart=[]; saveCart(); renderCart(); }
+
+function toggleCart(){ document.getElementById('cartPanel').classList.toggle('show'); }
+
+function orderOnWhatsApp(){
+  if(!cart.length){ alert('Please add a part to your cart first.'); return; }
+  const lines = cart.map((x,i)=>`${i+1}. ${x.name} | ${x.price} | Qty: ${x.qty}`);
+  const msg = `Hello Singh Auto Spares & Accessories,%0A%0AI want to order/enquire about these parts:%0A${lines.join('%0A')}%0A%0APlease confirm availability, exact price and fitment for my car.%0AThank you.`;
+  window.open('https://wa.me/916009478898?text='+msg,'_blank');
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
+renderCart();
+</script>
+
+
+<script id="cart-product-helper">
+function addProductFromButton(btn){
+  const card = btn.closest('.product-card,.product,.card') || btn.parentElement;
+  const text = card ? card.innerText : '';
+  const lines = text.split('\n').map(s=>s.trim()).filter(Boolean);
+  let name = lines.find(x => !/₹|View Details|WhatsApp|Add to Cart|Enquire/i.test(x)) || 'Selected Spare Part';
+  let price = lines.find(x => /₹/.test(x)) || 'Price on enquiry';
+  addToCart(name, price);
+}
+</script>
+
+</body>
+</html>
